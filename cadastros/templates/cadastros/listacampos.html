@@ -1,0 +1,19 @@
+<h1>Campos</h1>
+<ul>
+{% for campo in object_list %}
+
+    <li>{{ campo.nome }} - {{ campo.descricao }}</li>
+{% empty %}
+    <li>No campos yet.</li>
+{% endfor %}
+</ul>
+<div>
+    {% if page_obj.has_previous %}
+    <a href="?/page={{page_obj.prevous_page_number}}">Voltar</a>
+    {% endif %}
+    <span> Pagina: {{ page_obj.number }}</span>
+    {% if page_obj.has_next %}
+    <a href="?/page={{page_obj.next_page_number}}">Voltar</a>
+    {% endif %}
+    
+</div>

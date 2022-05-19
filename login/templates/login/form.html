@@ -1,0 +1,10 @@
+{% if request.user.is_authenticate %}
+<h1>esta logado</h1>
+{% else %}
+<form method="post">
+    <h2>login</h2>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
+</form>
+{% endif %}

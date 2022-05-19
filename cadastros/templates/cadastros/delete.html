@@ -1,0 +1,7 @@
+<h1>Excluir</h1>
+<form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    {{ form.as_p }}
+    <input type="submit" value="Delet">
+</form>
